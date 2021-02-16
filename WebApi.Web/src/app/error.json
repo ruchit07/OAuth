@@ -1,0 +1,11 @@
+{
+  "RequiredFirstName": "First Name field cannot be empty.",
+  "RequiredLastName": "Last Name field cannot be empty.",
+  "InvalidEmail": "E-mail address is invalid.",
+  "RequiredEmail": "E-mail address field cannot be empty.",
+  "SelectTerms": "Please select you agree to LoopDASH's Terms of Use and Privacy Policy.",
+  "RequiredPassword": "Password field cannot be empty.",
+  "DefaultError": "Something went wrong. Please refresh the page or try again later.",
+  "ErrorOccurred": "Error occurred while processing your request.",
+  "RectifyErrors": "Please rectify all errors by providing required details."
+}

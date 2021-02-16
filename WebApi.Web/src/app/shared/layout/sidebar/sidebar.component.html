@@ -1,0 +1,24 @@
+<mat-nav-list class="pt-0">
+    <div *ngFor="let item of routes" class="p-0">
+        <a *ngIf="item?.item.length <= 0" mat-list-item [routerLinkActive]="'active'" [routerLink]="['/' + item.path]">
+            <mat-icon class="sidenav-icon">{{ item.data.icon }}</mat-icon>
+            {{ item.data.text }}
+        </a>
+        <div *ngIf="item?.item.length > 0" [class.nested-menu]="item.showMenu">
+            <a mat-list-item (click)="item.showMenu = !item.showMenu">
+                <mat-icon class="sidenav-icon">{{ item.data.icon }}</mat-icon>
+                <span>{{ item.data.text }}</span>
+                <mat-icon class="sidenav-icon ml-auto">{{ item.showMenu ? 'expand_less' : 'expand_more'}}</mat-icon>
+            </a>
+            <div class="pd-10" *ngIf="item.showMenu">
+                <mat-nav-list>
+                    <a class="pl-20" *ngFor="let itemC of item.item" mat-list-item [routerLinkActive]="'active'"
+                        [routerLink]="['/' + itemC.path]">
+                        <mat-icon class="sidenav-icon">{{ itemC.data.icon }}</mat-icon>
+                        {{ itemC.data.text }}
+                    </a>
+                </mat-nav-list>
+            </div>
+        </div>
+    </div>
+</mat-nav-list>

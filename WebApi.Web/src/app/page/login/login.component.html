@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="user.form">
+            <p>
+                <mat-form-field class="col-md-12 mt-10">
+                    <input matInput placeholder="Username" name="UserName" autocomplete="off" formControlName="UserName"
+                        required>
+                    <mat-error
+                        *ngIf="user.form.controls['UserName'].errors?.required && user.form.controls['UserName'].touched">
+                        Username is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="col-md-12 mt-10">
+                    <input matInput placeholder="Password" type="password" name="Password" autocomplete="off"
+                        formControlName="Password" required>
+                    <mat-error
+                        *ngIf="user.form.controls['Password'].errors?.required && user.form.controls['Password'].touched">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <div class="button">
+                <button mat-raised-button color="primary" (click)="login()"
+                    [disabled]="(user.form.controls['UserName'].errors?.required || user.form.controls['Password'].errors?.required) || isLoading">Login</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

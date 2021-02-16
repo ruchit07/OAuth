@@ -1,0 +1,4 @@
+<quill-editor #editor [styles]="{height: '200px'}" [(ngModel)]="content" trackChanges="all"
+  (onContentChanged)="onContentChanged($event)"></quill-editor>
+
+<div [innerHtml]="content"></div>
