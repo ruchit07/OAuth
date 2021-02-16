@@ -11,5 +11,14 @@ namespace WebApi.Resource.Api.Controllers
             string content = "Hello Worl!";
             return Ok(content);
         }
+
+        
+        [Route("content")]
+        [Authorize]
+        public IHttpActionResult GetContent()
+        {
+            string content = "You are authorised!";
+            return Ok(content);
+        }
     }
 }

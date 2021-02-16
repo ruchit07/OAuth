@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "0cbe4041-d196-49b8-89a7-9524fd5b140f",
+		"name": "OAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "UserName",
+							"value": "ruchit",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "ruchit@123",
+							"type": "text"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "ruchit@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44340/api/Account/Register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44340",
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "ruchit",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ruchit@123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "WebApp",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "WebApp@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44340/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44340",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "WebApp",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "WebApp@123",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "d6dc7b978aee4579acfd921f229b6a4c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:44340/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44340",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unauthorised",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "0VnVptS9ommBbMVRcfqn3-HTiDcwCzBZATYYlNpgheF-jYvwNgXJtw53oNn20tlacbZnVlAD50zyHiMO7zKGd3gZClyN_r0_SH6Hha5Pw-dsUFgHLTrTon3wytV43INul2LM8x9__y4ON9sXpkHVnDIxR_2n8S7gMexwWmJDbbK2sh1UBhtyS7Fd9ZWhlNOnfJbZJaZB1V9ORu0_g85LNMYEfrazZh80GY3dwgLQH1mJjrQoMdP5hRGDHEfuDh8zk3p8oZ5RD3ZOdNCgo9msOSBQ0-3HDsdLwVNtTGTqKJp7ovJFGnvHUsdCmPDBmu5Ct8aacjYJYB1WreIF2zhAFA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44355/api/home",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"home"
+					]
+				},
+				"description": "Unauthorised"
+			},
+			"response": []
+		},
+		{
+			"name": "Authorised",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "i1kYNKoCPXB8Ox1PlGfJheoViKP9x7U1aTcIqMgU8QJAQn9ZWJ-y9eQXAKEiQ1xM437bAZ2C1G3-ioXgpLxGSs5lJ5RC5QlPkUpgKsaNwy8jmgPb98libS219QQQ-dMHy0fFVTYADblXBhTHN6OK4-QbWekRUrdxmSMYHnKnQb4nl-xtrL_o3nOYaW8uZarDcBGgemAjnYlK-tJDO3EJzyxH2zEswDINJLGKwGD_QRoG5K3Kkrh4LF1zu95zNcNOv8WOkG6ThkJ4dAqDxBwrSqdcCi_wP1J7zosdBJ6JIzt-DWY0RtyfpLiRqWKyD2UnfGVNImwF00gpDNmaBVfntJzDdAXc5Wnro-sHLh-m7dQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44355/api/home/content",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44355",
+					"path": [
+						"api",
+						"home",
+						"content"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
