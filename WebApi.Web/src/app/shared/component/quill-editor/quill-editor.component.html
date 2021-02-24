@@ -1,4 +1,33 @@
-<quill-editor #editor [styles]="{height: '200px'}" [(ngModel)]="content" trackChanges="all"
-  (onContentChanged)="onContentChanged($event)"></quill-editor>
+<quill-editor [(ngModel)]="content" (onContentChanged)="onContentChanged($event)" [styles]="{height: '200px'}"
+  (onEditorCreated)="onEditorCreated($event)" placeholder="Insert block why writing '/'" [modules]="{ toolbar: false }"
+  (onBlur)="blur()">
+</quill-editor>
 
-<div [innerHtml]="content"></div>
+<div [hidden]="isHideBlockDropdown" class="dropdown">
+  <div class="dropdown-content">
+    <div class="title">Basic Blocks</div>
+    <div class="option" (click)="plainText()">
+      <div>Text</div>
+      <div>Start with plain text</div>
+    </div>
+    <div class="option" (click)="orderedList()">
+      <div>OL List</div>
+      <div>Order list</div>
+    </div>
+
+    <div class="option" (click)="unorderedList()">
+      <div>UL List</div>
+      <div>Unordered list</div>
+    </div>
+
+    <div class="option" (click)="heading1()">
+      <div>Heading 1</div>
+      <div>Big section heading</div>
+    </div>
+
+    <div class="option" (click)="heading2()">
+      <div>Heading 2</div>
+      <div>Medium section heading</div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  content = "<p><strong>rewrwerwe</strong></p>";
+  content = "";
 
   constructor() { }
 
